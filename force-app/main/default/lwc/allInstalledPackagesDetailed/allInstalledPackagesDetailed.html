@@ -1,0 +1,41 @@
+<!-- AnalysePackageLicenses.html -->
+<template>
+    <!-- <lightning-layout class="slds-m-around--x-small" title="Component Body Layout" horizontal-align="spread"> -->
+    <!-- <lightning-layout-item class="slds-m-around--x-small" title="Subject List Layout Item" flexibility="auto" style="width: 50%"> -->
+<!-- test lightning layout for on click event  -->
+        
+<lightning-card title="All Packages - Detailed View" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            
+                <a target="_self" class="slds-button" download="ExportToExcel.csv" href={hrefdata} onclick={exportToCSV}  
+                style="margin-left: 80%;">Export to Excel</a>
+            <lightning-input
+                type="search"
+                onchange={handleKeyChange}
+                class="slds-show slds-is-relative slds-var-m-bottom_small"
+            ></lightning-input>
+            
+            <template if:true={data}>
+                <!-- <template for:each={users.data} for:item="user">
+                    <p key={user.Id}>{user.Id}  {user.Name}</p>
+                </template>      -->
+            <lightning-datatable
+                key-field="Id"
+                data={data}
+                show-row-number-column
+                row-number-offset={rowOffset}
+                hide-checkbox-column
+                columns={columns}>
+            </lightning-datatable>
+            </template>
+            <!-- <template if:true={users.error}>
+                <c-error-panel errors={users.error}></c-error-panel>
+            </template> -->
+        </div>
+</lightning-card>
+
+    <!-- test lightning layout for on click event  -->
+<!-- </lightning-layout-item>
+</lightning-layout> -->
+
+</template>
